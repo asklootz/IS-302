@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IS-302 - Gruppe 4</title>
+
+    <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!---Old Style
+  <style>
+    /* ── Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #07070f;
+      color: #e8e8f0;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Orbitron', sans-serif; }
+    * { scrollbar-width: thin; scrollbar-color: rgba(255,31,142,.4) transparent; }
+
+    /* ── Utilities ────────────────────────────────────── */
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #ff1f8e;
+      display: block;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      letter-spacing: .15em;
+      background: rgba(255,31,142,.1);
+      border: 1px solid rgba(255,31,142,.3);
+      color: #ff52a8;
+      padding: 2px 10px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .glow-pink {
+      text-shadow: 0 0 20px rgba(255,31,142,.8), 0 0 40px rgba(255,31,142,.4);
+    }
+
+    .glow-border {
+      box-shadow: 0 0 0 1px rgba(255,31,142,.2), 0 0 20px rgba(255,31,142,.06);
+      transition: box-shadow .3s ease;
+    }
+    .glow-border:hover {
+      box-shadow: 0 0 0 1px rgba(255,31,142,.55), 0 0 28px rgba(255,31,142,.14);
+    }
+
+    /* ── Backgrounds ──────────────────────────────────── */
+    .bg-dark-page { background: #07070f; }
+    .bg-dark-alt  { background: rgba(13,13,26,.6); }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,31,142,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,31,142,.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .scan-line {
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(255,31,142,.015) 2px, rgba(255,31,142,.015) 4px
+      );
+    }
+
+    .hero-gradient {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,31,142,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 80% 50%, rgba(255,31,142,.06) 0%, transparent 50%),
+        #07070f;
+    }
+
+    /* ── Cards ────────────────────────────────────────── */
+    .card-dark {
+      background: #0d0d1a;
+      border: 1px solid rgba(255,31,142,.2);
+      border-radius: 4px;
+      padding: 28px 32px;
+    }
+
+    /* ── Placeholder box ──────────────────────────────── */
+    .placeholder-box {
+      border: 1px dashed rgba(255,31,142,.25);
+      padding: 32px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 90px;
+    }
+    .placeholder-box span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .2em;
+      color: rgba(255,31,142,.35);
+      text-transform: uppercase;
+    }
+
+    /* ── Navigation ───────────────────────────────────── */
+    #main-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      background: rgba(7,7,15,.6);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: background .3s, border-color .3s;
+    }
+    #main-nav.scrolled {
+      background: rgba(7,7,15,.95);
+      border-bottom-color: rgba(255,31,142,.2);
+    }
+
+    .nav-logo-dot {
+      width: 8px; height: 8px;
+      background: #ff1f8e;
+      box-shadow: 0 0 12px rgba(255,31,142,.9);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .nav-brand {
+      font-family: 'Orbitron', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      font-weight: 700;
+      color: #ff1f8e;
+    }
+
+    .nav-link-custom {
+      font-family: 'Orbitron', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #8888aa;
+      background: none;
+      border: none;
+      padding: 4px 0;
+      position: relative;
+      cursor: pointer;
+      transition: color .2s;
+      text-decoration: none;
+    }
+    .nav-link-custom::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: #ff1f8e;
+      box-shadow: 0 0 8px rgba(255,31,142,.8);
+      transition: width .25s;
+    }
+    .nav-link-custom:hover,
+    .nav-link-custom.active { color: #ff1f8e; }
+    .nav-link-custom:hover::after,
+    .nav-link-custom.active::after { width: 100%; }
+
+    /* ── Mobile menu ──────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      background: rgba(7,7,15,.97);
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255,31,142,.2);
+    }
+    .mobile-menu.open { display: flex; }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 20px; height: 2px;
+      background: #8888aa;
+      transition: background .2s;
+    }
+    .hamburger:hover span { background: #ff1f8e; }
+
+    /* ── Section header ───────────────────────────────── */
+    .section-index-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .section-index-line .divider {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,31,142,.2);
+    }
+
+    /* ── Progress bars ────────────────────────────────── */
+    .prog-track {
+      height: 3px;
+      background: rgba(255,31,142,.12);
+      margin-top: 6px;
+    }
+    .prog-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #ff1f8e, #ff79c6);
+      box-shadow: 0 0 8px rgba(255,31,142,.6);
+      transition: width 1.2s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    /* ── Timeline ─────────────────────────────────────── */
+    .timeline-wrap { position: relative; }
+    .timeline-line {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(255,31,142,.4) 0%, rgba(255,31,142,.05) 100%);
+    }
+    .timeline-entries { padding-left: 40px; display: flex; flex-direction: column; gap: 20px; }
+    .timeline-dot {
+      position: absolute;
+      left: -14px; top: 28px;
+      width: 8px; height: 8px;
+      background: #07070f;
+      border: 1px dashed rgba(255,31,142,.3);
+      transform: rotate(45deg);
+    }
+
+    /* ── Stat chips ───────────────────────────────────── */
+    .stat-chip {
+      background: #0d0d1a;
+      border: 1px solid rgba(255,31,142,.2);
+      border-radius: 4px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stat-icon { color: rgba(255,31,142,.4); font-size: 1.1rem; }
+
+    /* ── Member cards ─────────────────────────────────── */
+    .member-card {
+      background: #0d0d1a;
+      border: 1px solid rgba(255,31,142,.15);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: box-shadow .3s;
+      height: 100%;
+    }
+    .member-card:hover {
+      box-shadow: 0 0 0 1px rgba(255,31,142,.4), 0 0 24px rgba(255,31,142,.1);
+    }
+    .member-avatar {
+      width: 56px; height: 56px;
+      background: rgba(255,31,142,.05);
+      border: 1px dashed rgba(255,31,142,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      color: rgba(255,31,142,.3);
+      letter-spacing: .1em;
+    }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    .hero-orb {
+      position: absolute;
+      right: 8%; top: 50%;
+      transform: translateY(-50%);
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,31,142,.12) 0%, transparent 70%);
+      border: 1px solid rgba(255,31,142,.15);
+      pointer-events: none;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,31,142,.15);
+      border: 1px solid rgba(255,31,142,.2);
+      max-width: 560px;
+    }
+    .status-cell { background: #07070f; padding: 20px 24px; }
+
+    /* ── Refleksjon accent bar ────────────────────────── */
+    .accent-bar {
+      width: 3px;
+      align-self: stretch;
+      background: linear-gradient(to bottom, rgba(255,31,142,.3), rgba(255,31,142,.05));
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Add entry btn ────────────────────────────────── */
+    .add-entry-btn {
+      background: transparent;
+      border: 1px dashed rgba(255,31,142,.25);
+      padding: 18px;
+      width: 100%;
+      color: rgba(255,31,142,.35);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .add-entry-btn:hover {
+      border-color: rgba(255,31,142,.5);
+      color: rgba(255,31,142,.6);
+    }
+
+    /* ── Footer ───────────────────────────────────────── */
+    footer {
+      background: #07070f;
+      border-top: 1px solid rgba(255,31,142,.15);
+      padding: 40px 0;
+    }
+
+    /* ── Section spacing ──────────────────────────────── */
+    .section-pad { padding-top: 7rem; padding-bottom: 7rem; }
+
+    @media (max-width: 767px) {
+      .hero-orb { display: none; }
+      .desktop-nav { display: none !important; }
+      .timeline-line, .timeline-dot { display: none !important; }
+      .timeline-entries { padding-left: 0; }
+    }
+    @media (min-width: 768px) {
+      .hamburger { display: none !important; }
+    }
+  </style>-->
+</head>
+
+<body>
+
+<!-- ══ NAV ════════════════════════════════════════════════════ --><nav id="main-nav">
+  <div class="container-xl d-flex align-items-center justify-content-between w-100 px-4">
+
+    <div class="d-flex align-items-center gap-2">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-brand">IS-302 // Phonero</span>
+    </div>
+
+    <div class="desktop-nav d-none d-md-flex align-items-center gap-4">
+      <button class="nav-link-custom active" onclick="navScrollTo('hjem')">Hjem</button>
+      <button class="nav-link-custom" onclick="navScrollTo('oppgave')">Oppgave</button>
+      <button class="nav-link-custom" onclick="navScrollTo('om-oss')">Om Oss</button>
+      <button class="nav-link-custom" onclick="navScrollTo('status-1')">Status 1</button>
+      <button class="nav-link-custom" onclick="navScrollTo('status-2')">Status 2</button>
+      <button class="nav-link-custom" onclick="navScrollTo('refleksjon')">Refleksjon</button>
+      <button class="nav-link-custom" onclick="navScrollTo('dagbok')">Dagbok</button>
+    </div>
+
+    <span class="font-mono d-none d-md-block" style="font-size:.6rem;color:#8888aa;letter-spacing:.1em;">2026</span>
+
+    <button class="hamburger d-md-none" id="hamburger-btn" aria-label="Meny">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="nav-link-custom" onclick="navScrollTo('hjem');closeMobileMenu()">Hjem</button>
+    <button class="nav-link-custom" onclick="navScrollTo('oppgave');closeMobileMenu()">Oppgave</button>
+    <button class="nav-link-custom" onclick="navScrollTo('om-oss');closeMobileMenu()">Om Oss</button>
+    <button class="nav-link-custom" onclick="navScrollTo('status-1');closeMobileMenu()">Status 1</button>
+    <button class="nav-link-custom" onclick="navScrollTo('status-2');closeMobileMenu()">Status 2</button>
+    <button class="nav-link-custom" onclick="navScrollTo('refleksjon');closeMobileMenu()">Refleksjon</button>
+    <button class="nav-link-custom" onclick="navScrollTo('dagbok');closeMobileMenu()">Dagbok</button>
+  </div>
+</nav>
+
+
+<!-- ══ HJEM ═══════════════════════════════════════════════════ -->
+<section id="hjem" class="position-relative d-flex flex-column justify-content-center hero-gradient scan-line" style="min-height:100vh;">
+  <div class="grid-bg position-absolute" style="inset:0;pointer-events:none;"></div>
+  <div class="hero-orb"></div>
+
+  <div class="container-xl position-relative px-4" style="padding-top:96px;padding-bottom:80px;">
+    <span class="section-label mb-3">// Praksisprosjekt 2026</span>
+
+    <h1 class="glow-pink mb-3" style="font-size:clamp(2.2rem,6vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;color:#fff;">
+      Praksis hos<br>
+      <span style="color:#ff1f8e;">Phonero</span>
+    </h1>
+
+    <p style="font-size:clamp(1rem,2vw,1.2rem);color:#555577;max-width:480px;line-height:1.7;margin-bottom:48px;font-style:italic;">
+      Arbeid med intern IT-utvikling og prosjekter for Phonero.
+    </p>
+
+    <div class="d-flex flex-wrap gap-2 mb-5">
+      <span class="tag">IS-302</span>
+      <span class="tag">UiA</span>
+      <span class="tag">Høst 2026</span>
+      <span class="tag">Phonero</span>
+    </div>
+
+    <div class="status-grid">
+      <div class="status-cell">
+        <span class="section-label mb-1" style="font-size:.55rem;">Fase</span>
+        <div class="font-mono" style="font-size:.85rem;color:#e8e8f0;">Start</div>
+      </div>
+      <div class="status-cell">
+        <span class="section-label mb-1" style="font-size:.55rem;">Status</span>
+        <div class="font-mono" id="status-ticker" style="font-size:.85rem;color:#e8e8f0;">Aktiv.</div>
+      </div>
+      <div class="status-cell">
+        <span class="section-label mb-1" style="font-size:.55rem;">Semester</span>
+        <div class="font-mono" style="font-size:.85rem;color:#e8e8f0;">Høst 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ OPPGAVE ══════════════════════════════════════════════════ -->
+<section id="oppgave" class="bg-dark-page section-pad">
+  <div class="container-xl px-4">
+
+    <div class="section-index-line">
+      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 01</span>
+      <div class="divider"></div>
+    </div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Oppgave</h2>
+    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Oppdraget vi har fått av Phonero</p>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Oppgavebeskrivelse</span>
+          <div class="placeholder-box" style="min-height:160px;"><span>Beskriv oppgaven me har fått av Phonero</span></div>
+        </div>
+      </div>
+      <div class="col-lg-4 d-flex flex-column gap-3">
+        <div class="card-dark glow-border">
+          <span class="section-label mb-3">Oppdragsgiver</span>
+          <div style="font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;color:#ff1f8e;">Phonero</div>
+        </div>
+        <div class="card-dark glow-border">
+          <span class="section-label mb-3">Teknologier</span>
+          <div class="placeholder-box"><span>Verktøy og teknologi</span></div>
+        </div>
+        <div class="card-dark glow-border">
+          <span class="section-label mb-3">Mål</span>
+          <div class="placeholder-box"><span>TBD?</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ OM OSS ══════════════════════════════════════════════════ -->
+<section id="om-oss" class="bg-dark-alt section-pad">
+  <div class="container-xl px-4">
+
+    <div class="section-index-line">
+      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 02</span>
+      <div class="divider"></div>
+    </div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Om Oss</h2>
+    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">IS-302 Praksisprosjekt — Universitetet i Agder</p>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Member 1 -->
+      <div class="col-md-6 col-lg-5">
+        <div class="member-card">
+          <div class="member-avatar">foto</div>
+          <div class="text-center mt-1">
+            <div style="font-family:'Orbitron',sans-serif;font-weight:600;color:#e8e8f0;font-size:1rem;">Ask Lootz</div>
+            <div class="font-mono" style="font-size:.6rem;color:#ff52a8;letter-spacing:.15em;margin-top:4px;">Student</div>
+          </div>
+          <div class="member-bio">Fagbrev innenfor IKT. Jobber innenfor cybersikkerhet som SOC-analytiker. Interesse i cybersec, pentesting, systemarkitektur, nettverksdrift. Erfaring med diverse IT-verktøy og plattformer.</div>
+          <div class="d-flex gap-2 mt-2">
+            <a href="https://www.linkedin.com/in/ask-lootz-17a6651b6" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/asklootz" class="social-link" title="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:asklootz@outlook.com" class="social-link" title="E-post"><i class="bi bi-envelope"></i></a>
+            <a href="https://asklootz.github.io" class="social-link" title="Nettside"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-md-6 col-lg-5">
+        <div class="member-card">
+          <div class="member-avatar">foto</div>
+          <div class="text-center mt-1">
+            <div style="font-family:'Orbitron',sans-serif;font-weight:600;color:#e8e8f0;font-size:1rem;">Silje Solberg</div>
+            <div class="font-mono" style="font-size:.6rem;color:#ff52a8;letter-spacing:.15em;margin-top:4px;">Student</div>
+          </div>
+          <div class="member-bio">[ Skriv litt om deg selv her ]</div>
+          <div class="d-flex gap-2 mt-2">
+            <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" title="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-link" title="E-post"><i class="bi bi-envelope"></i></a>
+            <a href="#" class="social-link" title="Nettside"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ STATUS 1 ════════════════════════════════════════════════ -->
+<section id="status-1" class="bg-dark-page section-pad">
+  <div class="container-xl px-4">
+
+    <div class="section-index-line">
+      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 03</span>
+      <div class="divider"></div>
+    </div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Status 1</h2>
+    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Midtveisrapport — Første halvdel av praksisperioden</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Hva har vi gjort?</span>
+          <div class="placeholder-box" style="min-height:140px;"><span>Beskriv arbeidet i første periode</span></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Hva har vi lært?</span>
+          <div class="placeholder-box" style="min-height:140px;"><span>Reflekter over læringen så langt</span></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card-dark glow-border">
+          <span class="section-label mb-3">Leveranser og fremdrift</span>
+          <div class="placeholder-box"><span>List opp leveranser og nåværende status</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ STATUS 2 ════════════════════════════════════════════════ -->
+<section id="status-2" class="bg-dark-alt section-pad">
+  <div class="container-xl px-4">
+
+    <div class="section-index-line">
+      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 04</span>
+      <div class="divider"></div>
+    </div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Status 2</h2>
+    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Sluttrapport — Avsluttende fase av praksisperioden</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Hva har vi gjort?</span>
+          <div class="placeholder-box" style="min-height:140px;"><span>Beskriv arbeidet i siste periode</span></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Hva har vi lært?</span>
+          <div class="placeholder-box" style="min-height:140px;"><span>Reflekter over læringen i sluttfasen</span></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card-dark glow-border">
+          <span class="section-label mb-3">Leveranser og fremdrift</span>
+          <div class="placeholder-box"><span>List opp sluttleveranser og status</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ REFLEKSJON ══════════════════════════════════════════════ -->
+<section id="refleksjon" class="bg-dark-alt section-pad">
+  <div class="container-xl px-4">
+
+    <div class="section-index-line">
+      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 05</span>
+      <div class="divider"></div>
+    </div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Refleksjon</h2>
+    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Avsluttende refleksjon over praksisperioden</p>
+
+    <div class="row g-4 mb-4">
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Overordnet erfaring</span>
+          <div class="placeholder-box mt-2"><span>Skriv om den overordnede erfaringen</span></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Viktigste lærdommer</span>
+          <div class="placeholder-box mt-2"><span>Hva har vi lært?</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <div class="d-flex gap-3">
+            <div class="accent-bar"></div>
+            <div class="flex-grow-1">
+              <div style="font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,82,168,.5);margin-bottom:12px;letter-spacing:.02em;">Tema 1</div>
+              <div class="placeholder-box"><span>Refleksjon rundt dette temaet</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <div class="d-flex gap-3">
+            <div class="accent-bar"></div>
+            <div class="flex-grow-1">
+              <div style="font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,82,168,.5);margin-bottom:12px;letter-spacing:.02em;">Tema 2</div>
+              <div class="placeholder-box"><span>Refleksjon rundt dette temaet</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <div class="d-flex gap-3">
+            <div class="accent-bar"></div>
+            <div class="flex-grow-1">
+              <div style="font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,82,168,.5);margin-bottom:12px;letter-spacing:.02em;">Tema 3</div>
+              <div class="placeholder-box"><span>Refleksjon rundt dette temaet</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-dark glow-border h-100">
+          <div class="d-flex gap-3">
+            <div class="accent-bar"></div>
+            <div class="flex-grow-1">
+              <div style="font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,82,168,.5);margin-bottom:12px;letter-spacing:.02em;">Tema 4</div>
+              <div class="placeholder-box"><span>Refleksjon rundt dette temaet</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ DAGBOK ══════════════════════════════════════════════════ -->
+<section id="dagbok" class="bg-dark-page section-pad">
+  <div class="container-xl px-4">
+
+    <div class="section-index-line">
+      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 06</span>
+      <div class="divider"></div>
+    </div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Dagbok</h2>
+    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Løpende logg over arbeid og aktiviteter gjennom praksisperioden</p>
+
+    <div class="timeline-wrap">
+      <div class="timeline-line d-none d-lg-block"></div>
+      <div class="timeline-entries">
+
+        <div class="position-relative">
+          <div class="timeline-dot d-none d-lg-block"></div>
+          <div class="card-dark glow-border">
+            <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+              <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:600;color:#555577;font-style:italic;margin-bottom:4px;">[ Tittel på oppføring ]</div>
+                <div class="d-flex gap-3 align-items-center">
+                  <span class="font-mono" style="font-size:.6rem;color:rgba(255,82,168,.4);letter-spacing:.1em;">Uke ??</span>
+                  <span class="font-mono" style="font-size:.6rem;color:#333355;">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="placeholder-box"><span>Hva skjedde denne uken?</span></div>
+          </div>
+        </div>
+
+        <div class="position-relative">
+          <div class="timeline-dot d-none d-lg-block"></div>
+          <div class="card-dark glow-border">
+            <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+              <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:600;color:#555577;font-style:italic;margin-bottom:4px;">[ Tittel på oppføring ]</div>
+                <div class="d-flex gap-3 align-items-center">
+                  <span class="font-mono" style="font-size:.6rem;color:rgba(255,82,168,.4);letter-spacing:.1em;">Uke ??</span>
+                  <span class="font-mono" style="font-size:.6rem;color:#333355;">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="placeholder-box"><span>Hva skjedde denne uken?</span></div>
+          </div>
+        </div>
+
+        <div class="position-relative">
+          <div class="timeline-dot d-none d-lg-block"></div>
+          <div class="card-dark glow-border">
+            <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+              <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:600;color:#555577;font-style:italic;margin-bottom:4px;">[ Tittel på oppføring ]</div>
+                <div class="d-flex gap-3 align-items-center">
+                  <span class="font-mono" style="font-size:.6rem;color:rgba(255,82,168,.4);letter-spacing:.1em;">Uke ??</span>
+                  <span class="font-mono" style="font-size:.6rem;color:#333355;">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="placeholder-box"><span>Hva skjedde denne uken?</span></div>
+          </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════ -->
+<footer>
+  <div class="container-xl px-4 d-flex flex-wrap justify-content-between align-items-center gap-4">
+    <div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700;color:#ff1f8e;letter-spacing:.15em;margin-bottom:6px;">IS-302 PRAKSISPROSJEKT</div>
+      <div style="font-size:.85rem;color:#8888aa;">Universitetet i Agder · Praksis hos Phonero · Høst 2026</div>
+    </div>
+    <div class="font-mono" style="font-size:.6rem;color:#555577;letter-spacing:.15em;">© 2026 // Phonero // UiA</div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  /* ── Nav scroll ────────────────────────────── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  /* ── Smooth scroll ─────────────────────────── */
+  function navScrollTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ── Mobile menu ───────────────────────────── */
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+
+  /* ── Active nav on scroll ──────────────────── */
+  const sections = ['hjem','oppgave','om-oss','status-1','status-2','refleksjon','dagbok'];
+  const navBtns  = document.querySelectorAll('.desktop-nav .nav-link-custom');
+
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navBtns.forEach(b => b.classList.remove('active'));
+      const i = sections.indexOf(e.target.id);
+      if (i >= 0 && navBtns[i]) navBtns[i].classList.add('active');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' })
+  .observe ? sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        navBtns.forEach(b => b.classList.remove('active'));
+        const i = sections.indexOf(e.target.id);
+        if (i >= 0 && navBtns[i]) navBtns[i].classList.add('active');
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' }).observe(el);
+  }) : null;
+
+  /* ── Status ticker ─────────────────────────── */
+  const ticker = document.getElementById('status-ticker');
+  const states = ['Aktiv.', 'Aktiv..', 'Aktiv...'];
+  let t = 0;
+  setInterval(() => { ticker.textContent = states[t++ % 3]; }, 600);
+
+  /* ── Progress bars animate on scroll ──────── */
+  document.querySelectorAll('.prog-row').forEach(row => {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        row.querySelector('.prog-fill').style.width = (row.dataset.pct || 0) + '%';
+      }
+    }, { threshold: 0.3 }).observe(row);
+  });
+</script>
+
+</body>
+</html>
