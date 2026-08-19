@@ -23,15 +23,15 @@
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background: #07070f;
-      color: #e8e8f0;
+      background: #f7f4f2;
+      color: #1f1b1b;
       font-family: 'Rajdhani', sans-serif;
       font-size: 1rem;
       line-height: 1.6;
       margin: 0;
     }
     h1, h2, h3, h4, h5, h6 { font-family: 'Orbitron', sans-serif; }
-    * { scrollbar-width: thin; scrollbar-color: rgba(255,31,142,.4) transparent; }
+    * { scrollbar-width: thin; scrollbar-color: rgba(211,47,47,.4) transparent; }
 
     /* ── Utilities ────────────────────────────────────── */
     .font-mono { font-family: 'JetBrains Mono', monospace; }
@@ -41,7 +41,7 @@
       font-size: .62rem;
       letter-spacing: .25em;
       text-transform: uppercase;
-      color: #ff1f8e;
+      color: #d32f2f;
       display: block;
     }
 
@@ -49,62 +49,62 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: .58rem;
       letter-spacing: .15em;
-      background: rgba(255,31,142,.1);
-      border: 1px solid rgba(255,31,142,.3);
-      color: #ff52a8;
+      background: rgba(211,47,47,.1);
+      border: 1px solid rgba(211,47,47,.3);
+      color: #ef4444;
       padding: 2px 10px;
       text-transform: uppercase;
       display: inline-block;
     }
 
     .glow-pink {
-      text-shadow: 0 0 20px rgba(255,31,142,.8), 0 0 40px rgba(255,31,142,.4);
+      text-shadow: 0 0 20px rgba(211,47,47,.8), 0 0 40px rgba(211,47,47,.4);
     }
 
     .glow-border {
-      box-shadow: 0 0 0 1px rgba(255,31,142,.2), 0 0 20px rgba(255,31,142,.06);
+      box-shadow: 0 0 0 1px rgba(211,47,47,.2), 0 0 20px rgba(211,47,47,.06);
       transition: box-shadow .3s ease;
     }
     .glow-border:hover {
-      box-shadow: 0 0 0 1px rgba(255,31,142,.55), 0 0 28px rgba(255,31,142,.14);
+      box-shadow: 0 0 0 1px rgba(211,47,47,.55), 0 0 28px rgba(211,47,47,.14);
     }
 
     /* ── Backgrounds ──────────────────────────────────── */
-    .bg-dark-page { background: #07070f; }
-    .bg-dark-alt  { background: rgba(13,13,26,.6); }
+    .bg-dark-page { background: #f7f4f2; }
+    .bg-dark-alt  { background: rgba(255,255,255,.7); }
 
     .grid-bg {
       background-image:
-        linear-gradient(rgba(255,31,142,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,31,142,.06) 1px, transparent 1px);
+        linear-gradient(rgba(211,47,47,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(211,47,47,.06) 1px, transparent 1px);
       background-size: 40px 40px;
     }
 
     .scan-line {
       background: repeating-linear-gradient(
         0deg, transparent, transparent 2px,
-        rgba(255,31,142,.015) 2px, rgba(255,31,142,.015) 4px
+        rgba(211,47,47,.015) 2px, rgba(211,47,47,.015) 4px
       );
     }
 
     .hero-gradient {
       background:
-        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,31,142,.18) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 80% 50%, rgba(255,31,142,.06) 0%, transparent 50%),
-        #07070f;
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(211,47,47,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 80% 50%, rgba(211,47,47,.06) 0%, transparent 50%),
+        #f7f4f2;
     }
 
     /* ── Cards ────────────────────────────────────────── */
     .card-dark {
-      background: #0d0d1a;
-      border: 1px solid rgba(255,31,142,.2);
+      background: #ffffff;
+      border: 1px solid rgba(211,47,47,.2);
       border-radius: 4px;
       padding: 28px 32px;
     }
 
     /* ── Placeholder box ──────────────────────────────── */
     .placeholder-box {
-      border: 1px dashed rgba(255,31,142,.25);
+      border: 1px dashed rgba(211,47,47,.25);
       padding: 32px 24px;
       display: flex;
       align-items: center;
@@ -115,7 +115,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: .62rem;
       letter-spacing: .2em;
-      color: rgba(255,31,142,.35);
+      color: rgba(211,47,47,.35);
       text-transform: uppercase;
     }
 
@@ -127,20 +127,20 @@
       height: 64px;
       display: flex;
       align-items: center;
-      background: rgba(7,7,15,.6);
+      background: rgba(255,255,255,.8);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid transparent;
       transition: background .3s, border-color .3s;
     }
     #main-nav.scrolled {
-      background: rgba(7,7,15,.95);
-      border-bottom-color: rgba(255,31,142,.2);
+      background: rgba(255,255,255,.96);
+      border-bottom-color: rgba(211,47,47,.2);
     }
 
     .nav-logo-dot {
       width: 8px; height: 8px;
-      background: #ff1f8e;
-      box-shadow: 0 0 12px rgba(255,31,142,.9);
+      background: #d32f2f;
+      box-shadow: 0 0 12px rgba(211,47,47,.9);
       transform: rotate(45deg);
       flex-shrink: 0;
     }
@@ -150,7 +150,7 @@
       font-size: .68rem;
       letter-spacing: .2em;
       font-weight: 700;
-      color: #ff1f8e;
+      color: #d32f2f;
     }
 
     .nav-link-custom {
@@ -159,7 +159,7 @@
       letter-spacing: .12em;
       font-weight: 600;
       text-transform: uppercase;
-      color: #8888aa;
+      color: #5f5b5b;
       background: none;
       border: none;
       padding: 4px 0;
@@ -173,12 +173,12 @@
       position: absolute;
       bottom: 0; left: 0;
       width: 0; height: 1px;
-      background: #ff1f8e;
-      box-shadow: 0 0 8px rgba(255,31,142,.8);
+      background: #d32f2f;
+      box-shadow: 0 0 8px rgba(211,47,47,.8);
       transition: width .25s;
     }
     .nav-link-custom:hover,
-    .nav-link-custom.active { color: #ff1f8e; }
+    .nav-link-custom.active { color: #d32f2f; }
     .nav-link-custom:hover::after,
     .nav-link-custom.active::after { width: 100%; }
 
@@ -189,9 +189,9 @@
       gap: 12px;
       position: absolute;
       top: 64px; left: 0; right: 0;
-      background: rgba(7,7,15,.97);
+      background: rgba(255,255,255,.98);
       padding: 20px 24px;
-      border-bottom: 1px solid rgba(255,31,142,.2);
+      border-bottom: 1px solid rgba(211,47,47,.2);
     }
     .mobile-menu.open { display: flex; }
 
@@ -207,10 +207,10 @@
     .hamburger span {
       display: block;
       width: 20px; height: 2px;
-      background: #8888aa;
+      background: #5f5b5b;
       transition: background .2s;
     }
-    .hamburger:hover span { background: #ff1f8e; }
+    .hamburger:hover span { background: #d32f2f; }
 
     /* ── Section header ───────────────────────────────── */
     .section-index-line {
@@ -222,20 +222,20 @@
     .section-index-line .divider {
       flex: 1;
       height: 1px;
-      background: rgba(255,31,142,.2);
+      background: rgba(211,47,47,.2);
     }
 
     /* ── Progress bars ────────────────────────────────── */
     .prog-track {
       height: 3px;
-      background: rgba(255,31,142,.12);
+      background: rgba(211,47,47,.12);
       margin-top: 6px;
     }
     .prog-fill {
       height: 100%;
       width: 0;
-      background: linear-gradient(90deg, #ff1f8e, #ff79c6);
-      box-shadow: 0 0 8px rgba(255,31,142,.6);
+      background: linear-gradient(90deg, #d32f2f, #f87171);
+      box-shadow: 0 0 8px rgba(211,47,47,.6);
       transition: width 1.2s cubic-bezier(.25,.46,.45,.94);
     }
 
@@ -245,34 +245,34 @@
       position: absolute;
       left: 0; top: 0; bottom: 0;
       width: 1px;
-      background: linear-gradient(to bottom, rgba(255,31,142,.4) 0%, rgba(255,31,142,.05) 100%);
+      background: linear-gradient(to bottom, rgba(211,47,47,.4) 0%, rgba(211,47,47,.05) 100%);
     }
     .timeline-entries { padding-left: 40px; display: flex; flex-direction: column; gap: 20px; }
     .timeline-dot {
       position: absolute;
       left: -14px; top: 28px;
       width: 8px; height: 8px;
-      background: #07070f;
-      border: 1px dashed rgba(255,31,142,.3);
+      background: #f7f4f2;
+      border: 1px dashed rgba(211,47,47,.3);
       transform: rotate(45deg);
     }
 
     /* ── Stat chips ───────────────────────────────────── */
     .stat-chip {
-      background: #0d0d1a;
-      border: 1px solid rgba(255,31,142,.2);
+      background: #ffffff;
+      border: 1px solid rgba(211,47,47,.2);
       border-radius: 4px;
       padding: 18px 22px;
       display: flex;
       align-items: center;
       gap: 14px;
     }
-    .stat-icon { color: rgba(255,31,142,.4); font-size: 1.1rem; }
+    .stat-icon { color: rgba(211,47,47,.4); font-size: 1.1rem; }
 
     /* ── Member cards ─────────────────────────────────── */
     .member-card {
-      background: #0d0d1a;
-      border: 1px solid rgba(255,31,142,.15);
+      background: #ffffff;
+      border: 1px solid rgba(211,47,47,.15);
       padding: 24px;
       display: flex;
       flex-direction: column;
@@ -282,18 +282,18 @@
       height: 100%;
     }
     .member-card:hover {
-      box-shadow: 0 0 0 1px rgba(255,31,142,.4), 0 0 24px rgba(255,31,142,.1);
+      box-shadow: 0 0 0 1px rgba(211,47,47,.4), 0 0 24px rgba(211,47,47,.1);
     }
     .member-avatar {
       width: 56px; height: 56px;
-      background: rgba(255,31,142,.05);
-      border: 1px dashed rgba(255,31,142,.25);
+      background: rgba(211,47,47,.05);
+      border: 1px dashed rgba(211,47,47,.25);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'JetBrains Mono', monospace;
       font-size: .6rem;
-      color: rgba(255,31,142,.3);
+      color: rgba(211,47,47,.3);
       letter-spacing: .1em;
     }
 
@@ -304,8 +304,8 @@
       transform: translateY(-50%);
       width: 300px; height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,31,142,.12) 0%, transparent 70%);
-      border: 1px solid rgba(255,31,142,.15);
+      background: radial-gradient(circle, rgba(211,47,47,.12) 0%, transparent 70%);
+      border: 1px solid rgba(211,47,47,.15);
       pointer-events: none;
     }
 
@@ -313,17 +313,17 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: rgba(255,31,142,.15);
-      border: 1px solid rgba(255,31,142,.2);
+      background: rgba(211,47,47,.15);
+      border: 1px solid rgba(211,47,47,.2);
       max-width: 560px;
     }
-    .status-cell { background: #07070f; padding: 20px 24px; }
+    .status-cell { background: #f7f4f2; padding: 20px 24px; }
 
     /* ── Refleksjon accent bar ────────────────────────── */
     .accent-bar {
       width: 3px;
       align-self: stretch;
-      background: linear-gradient(to bottom, rgba(255,31,142,.3), rgba(255,31,142,.05));
+      background: linear-gradient(to bottom, rgba(211,47,47,.3), rgba(211,47,47,.05));
       flex-shrink: 0;
       margin-top: 2px;
     }
@@ -331,10 +331,10 @@
     /* ── Add entry btn ────────────────────────────────── */
     .add-entry-btn {
       background: transparent;
-      border: 1px dashed rgba(255,31,142,.25);
+      border: 1px dashed rgba(211,47,47,.25);
       padding: 18px;
       width: 100%;
-      color: rgba(255,31,142,.35);
+      color: rgba(211,47,47,.35);
       font-family: 'JetBrains Mono', monospace;
       font-size: .6rem;
       letter-spacing: .2em;
@@ -343,14 +343,14 @@
       transition: border-color .2s, color .2s;
     }
     .add-entry-btn:hover {
-      border-color: rgba(255,31,142,.5);
-      color: rgba(255,31,142,.6);
+      border-color: rgba(211,47,47,.5);
+      color: rgba(211,47,47,.6);
     }
 
     /* ── Footer ───────────────────────────────────────── */
     footer {
-      background: #07070f;
-      border-top: 1px solid rgba(255,31,142,.15);
+      background: #f7f4f2;
+      border-top: 1px solid rgba(211,47,47,.15);
       padding: 40px 0;
     }
 
@@ -389,7 +389,7 @@
       <button class="nav-link-custom" onclick="navScrollTo('dagbok')">Dagbok</button>
     </div>
 
-    <span class="font-mono d-none d-md-block" style="font-size:.6rem;color:#8888aa;letter-spacing:.1em;">2026</span>
+    <span class="font-mono d-none d-md-block" style="font-size:.6rem;color:#5f5b5b;letter-spacing:.1em;">2026</span>
 
     <button class="hamburger d-md-none" id="hamburger-btn" aria-label="Meny">
       <span></span><span></span><span></span>
@@ -416,9 +416,9 @@
   <div class="container-xl position-relative px-4" style="padding-top:96px;padding-bottom:80px;">
     <span class="section-label mb-3">// Praksisprosjekt 2026</span>
 
-    <h1 class="glow-pink mb-3" style="font-size:clamp(2.2rem,6vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;color:#fff;">
+    <h1 class="glow-pink mb-3" style="font-size:clamp(2.2rem,6vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;color:#1f1b1b;">
       Praksis hos<br>
-      <span style="color:#ff1f8e;">Phonero</span>
+      <span style="color:#d32f2f;">Phonero</span>
     </h1>
 
     <p style="font-size:clamp(1rem,2vw,1.2rem);color:#555577;max-width:480px;line-height:1.7;margin-bottom:48px;font-style:italic;">
@@ -435,15 +435,15 @@
     <div class="status-grid">
       <div class="status-cell">
         <span class="section-label mb-1" style="font-size:.55rem;">Fase</span>
-        <div class="font-mono" style="font-size:.85rem;color:#e8e8f0;">Start</div>
+        <div class="font-mono" style="font-size:.85rem;color:#1f1b1b;">Start</div>
       </div>
       <div class="status-cell">
         <span class="section-label mb-1" style="font-size:.55rem;">Status</span>
-        <div class="font-mono" id="status-ticker" style="font-size:.85rem;color:#e8e8f0;">Aktiv.</div>
+        <div class="font-mono" id="status-ticker" style="font-size:.85rem;color:#1f1b1b;">Aktiv.</div>
       </div>
       <div class="status-cell">
         <span class="section-label mb-1" style="font-size:.55rem;">Semester</span>
-        <div class="font-mono" style="font-size:.85rem;color:#e8e8f0;">Høst 2026</div>
+        <div class="font-mono" style="font-size:.85rem;color:#1f1b1b;">Høst 2026</div>
       </div>
     </div>
   </div>
@@ -455,11 +455,11 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 01</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 01</span>
       <div class="divider"></div>
     </div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Oppgave</h2>
-    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Oppdraget vi har fått av Phonero</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Oppgave</h2>
+    <p style="color:#5f5b5b;font-size:1rem;margin-bottom:48px;">Oppdraget vi har fått av Phonero</p>
 
     <div class="row g-4">
       <div class="col-lg-8">
@@ -471,7 +471,7 @@
       <div class="col-lg-4 d-flex flex-column gap-3">
         <div class="card-dark glow-border">
           <span class="section-label mb-3">Oppdragsgiver</span>
-          <div style="font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;color:#ff1f8e;">Phonero</div>
+          <div style="font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;color:#d32f2f;">Phonero</div>
         </div>
         <div class="card-dark glow-border">
           <span class="section-label mb-3">Teknologier</span>
@@ -493,11 +493,11 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 02</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 02</span>
       <div class="divider"></div>
     </div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Om Oss</h2>
-    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">IS-302 Praksisprosjekt — Universitetet i Agder</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Om Oss</h2>
+    <p style="color:#5f5b5b;font-size:1rem;margin-bottom:48px;">IS-302 Praksisprosjekt — Universitetet i Agder</p>
 
     <div class="row g-4 justify-content-center">
 
@@ -506,8 +506,8 @@
         <div class="member-card">
           <div class="member-avatar">foto</div>
           <div class="text-center mt-1">
-            <div style="font-family:'Orbitron',sans-serif;font-weight:600;color:#e8e8f0;font-size:1rem;">Ask Lootz</div>
-            <div class="font-mono" style="font-size:.6rem;color:#ff52a8;letter-spacing:.15em;margin-top:4px;">Student</div>
+            <div style="font-family:'Orbitron',sans-serif;font-weight:600;color:#1f1b1b;font-size:1rem;">Ask Lootz</div>
+            <div class="font-mono" style="font-size:.6rem;color:#ef4444;letter-spacing:.15em;margin-top:4px;">Student</div>
           </div>
           <div class="member-bio">Fagbrev innenfor IKT. Jobber innenfor cybersikkerhet som SOC-analytiker. Interesse i cybersec, pentesting, systemarkitektur, nettverksdrift. Erfaring med diverse IT-verktøy og plattformer.</div>
           <div class="d-flex gap-2 mt-2">
@@ -522,16 +522,18 @@
       <!-- Member 2 -->
       <div class="col-md-6 col-lg-5">
         <div class="member-card">
-          <div class="member-avatar">foto</div>
-          <div class="text-center mt-1">
-            <div style="font-family:'Orbitron',sans-serif;font-weight:600;color:#e8e8f0;font-size:1rem;">Silje Solberg</div>
-            <div class="font-mono" style="font-size:.6rem;color:#ff52a8;letter-spacing:.15em;margin-top:4px;">Student</div>
+          <div class="member-avatar">
+            <img src="images/silje-solberg.jpg" alt="Silje Solberg" />
           </div>
-          <div class="member-bio">[ Skriv litt om deg selv her ]</div>
+          <div class="text-center mt-1">
+            <div style="font-family:'Orbitron',sans-serif;font-weight:600;color:#1f1b1b;font-size:1rem;">Silje Solberg</div>
+            <div class="font-mono" style="font-size:.6rem;color:#ef4444;letter-spacing:.15em;margin-top:4px;">Student</div>
+          </div>
+          <div class="member-bio">Linjeleder for PEER-mentorordningen for IT-studenter. Vitenskapelig assistent i programmeringsfag for førsteårsstudenter. Interesse i UX, cuybersec, organisasjonsutvikling. Erfaring innen team-arbeid og design. </div>
           <div class="d-flex gap-2 mt-2">
-            <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="social-link" title="GitHub"><i class="bi bi-github"></i></a>
-            <a href="#" class="social-link" title="E-post"><i class="bi bi-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/silje-solberg/" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/siljesolberg" class="social-link" title="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:siljeso@uia.no" class="social-link" title="E-post"><i class="bi bi-envelope"></i></a>
             <a href="#" class="social-link" title="Nettside"><i class="bi bi-globe"></i></a>
           </div>
         </div>
@@ -547,11 +549,11 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 03</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 03</span>
       <div class="divider"></div>
     </div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Status 1</h2>
-    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Midtveisrapport — Første halvdel av praksisperioden</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Status 1</h2>
+    <p style="color:#5f5b5b;font-size:1rem;margin-bottom:48px;">Midtveisrapport — Første halvdel av praksisperioden</p>
 
     <div class="row g-4">
       <div class="col-md-6">
@@ -583,11 +585,11 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 04</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 04</span>
       <div class="divider"></div>
     </div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Status 2</h2>
-    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Sluttrapport — Avsluttende fase av praksisperioden</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Status 2</h2>
+    <p style="color:#5f5b5b;font-size:1rem;margin-bottom:48px;">Sluttrapport — Avsluttende fase av praksisperioden</p>
 
     <div class="row g-4">
       <div class="col-md-6">
@@ -619,11 +621,11 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 05</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 05</span>
       <div class="divider"></div>
     </div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Refleksjon</h2>
-    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Avsluttende refleksjon over praksisperioden</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Refleksjon</h2>
+    <p style="color:#5f5b5b;font-size:1rem;margin-bottom:48px;">Avsluttende refleksjon over praksisperioden</p>
 
     <div class="row g-4 mb-4">
       <div class="col-md-6">
@@ -696,11 +698,11 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.65rem;color:#ff1f8e;letter-spacing:.2em;">// 06</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 06</span>
       <div class="divider"></div>
     </div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;">Dagbok</h2>
-    <p style="color:#8888aa;font-size:1rem;margin-bottom:48px;">Løpende logg over arbeid og aktiviteter gjennom praksisperioden</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Dagbok</h2>
+    <p style="color:#5f5b5b;font-size:1rem;margin-bottom:48px;">Løpende logg over arbeid og aktiviteter gjennom praksisperioden</p>
 
     <div class="timeline-wrap">
       <div class="timeline-line d-none d-lg-block"></div>
@@ -762,8 +764,8 @@
 <footer>
   <div class="container-xl px-4 d-flex flex-wrap justify-content-between align-items-center gap-4">
     <div>
-      <div style="font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700;color:#ff1f8e;letter-spacing:.15em;margin-bottom:6px;">IS-302 PRAKSISPROSJEKT</div>
-      <div style="font-size:.85rem;color:#8888aa;">Universitetet i Agder · Praksis hos Phonero · Høst 2026</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700;color:#d32f2f;letter-spacing:.15em;margin-bottom:6px;">IS-302 PRAKSISPROSJEKT</div>
+      <div style="font-size:.85rem;color:#5f5b5b;">Universitetet i Agder · Praksis hos Phonero · Høst 2026</div>
     </div>
     <div class="font-mono" style="font-size:.6rem;color:#555577;letter-spacing:.15em;">© 2026 // Phonero // UiA</div>
   </div>
