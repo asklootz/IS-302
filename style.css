@@ -94,6 +94,11 @@
       color: rgba(0, 0, 0, 0.774);
       text-transform: uppercase;
     }
+    .task-description-text {
+      font-size: 1rem;
+      letter-spacing: normal;
+      text-transform: none;
+    }
 
     /* ── Navigation ───────────────────────────────────── */
     #main-nav {
