@@ -1,4 +1,4 @@
-    /* ── Base ─────────────────────────────────────────── */
+1    /* ── Base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
