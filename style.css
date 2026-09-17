@@ -295,6 +295,23 @@
       color: rgba(211,47,47,.6);
     }
 
+/* ── Picture cards ─────────────────────────────────── */
+    .status-images {
+      width: 1000px; height: 1000px;
+      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .phonero-images {
+      width: 1000px; height: 1000px;
+      /* align-items: center; */
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
     /* ── Hero ─────────────────────────────────────────── */
     .hero-orb {
       position: absolute;
