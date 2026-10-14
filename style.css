@@ -1,4 +1,4 @@
-1    /* ── Base ─────────────────────────────────────────── */
+    /* ── Base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -92,6 +92,35 @@
       font-size: .62rem;
       letter-spacing: .2em;
       color: rgba(0, 0, 0, 0.774);
+      text-transform: uppercase;
+    }
+
+    .video-placeholder {
+      aspect-ratio: 16 / 9;
+      max-width: 900px;
+      margin-inline: auto;
+      border: 1px dashed rgba(211,47,47,.35);
+      background:
+        linear-gradient(rgba(211,47,47,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(211,47,47,.04) 1px, transparent 1px),
+        #f7f4f2;
+      background-size: 32px 32px;
+      color: rgba(95,91,91,.75);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .video-placeholder i {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .video-placeholder span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-align: center;
       text-transform: uppercase;
     }
 
