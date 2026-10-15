@@ -17,6 +17,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <link href="https://cdn.prod.website-files.com/60b9da5f05223f7e7dad4281/61711c80f9c322d25fa13351_favicon.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 
 <body>
@@ -104,7 +105,7 @@
   <div class="container-xl px-4">
 
     <div class="section-index-line">
-      <span class="font-mono" style="font-size:.1005rem;color:#d32f2f;letter-spacing:.2em;">// 01</span>
+      <span class="font-mono" style="font-size:.65rem;color:#d32f2f;letter-spacing:.2em;">// 01</span>
       <div class="divider"></div>
     </div>
     <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:#1f1b1b;letter-spacing:-.02em;margin-bottom:8px;">Oppgave</h2>
@@ -274,20 +275,63 @@
     <div class="row g-4">
       <div class="col-md-6">
         <div class="card-dark glow-border h-100">
-          <span class="section-label mb-3">Hva har vi gjort?</span>
-          <div class="placeholder-box" style="min-height:140px;"><span>Beskriv arbeidet i siste periode</span></div>
+          <span class="section-label mb-3">Våre arbeidsoppgaver</span>
+          <div class="placeholder-box" style="min-height:140px;"><span>Fortsettelse av arbeidsoppgavene i forrige periode. Dette inkluderer å koble frontend til backend og implementere nye funksjoner basert på tilbakemeldinger.</span></div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="card-dark glow-border h-100">
-          <span class="section-label mb-3">Hva har vi lært?</span>
-          <div class="placeholder-box" style="min-height:140px;"><span>Reflekter over læringen i sluttfasen</span></div>
+          <span class="section-label mb-3">Spesielle utfordringer
+          </span>
+          <div class="placeholder-box" style="min-height:140px;"><span>Porblemer med API forespørseler mellom frontend og pocketbase siden vi ikke har noe særlig erfaring med pocketbase som backend-løsning. Dette har ført til flere runder med feilsøking og justeringer underveis.  </span></div>
         </div>
       </div>
       <div class="col-12">
         <div class="card-dark glow-border">
           <span class="section-label mb-3">Leveranser og fremdrift</span>
-          <div class="placeholder-box"><span>List opp sluttleveranser og status</span></div>
+          <div class="placeholder-box"><span>Muliggjøre å lage eksterne brukere utenfor bedriftens EntraID. Etter feilsøkingen mtp API forespørselene fant vi ut at problemet lå i verifiseringen av de eksterne brukerene og fikk så løst dette problemet. Videre fikk vi deploye koden vår til produksjonsmiljøet. </span></div>
+        </div>
+      </div>
+       <div class="col-md-6">
+          <div class="card-dark glow-border h-100">
+            <span class="section-label mb-3">Før </span>
+            <div><img src="images/Phonero før.png" alt="før " class="img-fluid rounded mt-4"/> </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-dark glow-border h-100">
+            <span class="section-label mb-3">Etter</span>
+            <div><img src="images/Phonero event.png" alt="etter " class="img-fluid rounded mt-4"/> </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-dark glow-border h-100">
+          <span class="section-label mb-3">Hvem ønsker du å invitere?</span>
+          <div><img src="images/Phonero invite.png" alt="invite" class="img-fluid rounded mt-4"/></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="card-dark glow-border h-100">
+            <span class="section-label mb-3">Vår branch merget til main </span>
+            <div><img src="images/PullRequests.png" alt="Pull Requests" class="img-fluid rounded mt-4"/> </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="col-md-6 offset-md-3 text-center ">
+          <div class="card-dark glow-border" align="center">
+            <span class="section-label mb-3">Video oppdatering om praksisperioden</span>
+          <div>
+            <iframe 
+              width="560" height="315"
+              src="https://www.youtube.com/embed/muATjKbpKks" 
+              title="Video oppdatering"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              class="absolute inset-0 w-full h-full">
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -368,7 +412,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -499,8 +542,40 @@
             <div class="placeholder-box"><span>Nå har vi fått gjort ferdig arbeid med å koble frontend Silje har laget opp mot backend, databasen til applikasjonen. Nå kan administrator legge til og invitere eksterne brukere til applikasjonen.</span></div>
           </div>
         </div>
+        
+        <div class="position-relative">
+          <div class="timeline-dot d-none d-lg-block"></div>
+          <div class="card-dark glow-border">
+            <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+              <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:600;color:#555577;font-style:italic;margin-bottom:4px;">Deployment!</div>
+                <div class="d-flex gap-3 align-items-center">
+                  <span class="font-mono" style="font-size:.6rem;color:rgba(255,82,168,.4);letter-spacing:.1em;">Uke 41</span>
+                  <span class="font-mono" style="font-size:.6rem;color:#333355;">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="placeholder-box"><span>Etter arbeidet forrige uke gjorde vi noen siste finpuss på systemet, hadde møte med veileder og fikk være med på å deploye koden vår til Produksjons-miljøet!</span></div>
+          </div>
+        </div>
+        
+        <div class="position-relative">
+          <div class="timeline-dot d-none d-lg-block"></div>
+          <div class="card-dark glow-border">
+            <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+              <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:600;color:#555577;font-style:italic;margin-bottom:4px;">Veien videre</div>
+                <div class="d-flex gap-3 align-items-center">
+                  <span class="font-mono" style="font-size:.6rem;color:rgba(255,82,168,.4);letter-spacing:.1em;">Uke 42</span>
+                  <span class="font-mono" style="font-size:.6rem;color:#333355;">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="placeholder-box"><span>Denne uken har vi jobbet med å kartlegge hvilke funksjoner som fortsatt mangler i systemet og planlegger videre utvikling. Dette inkluderer blant annet en funksjon for å invitere den eksterne brukeren til et spesifikt arrangement.</span></div>
+          </div>
+        </div>
       </div>
-
+    </div>
   </div>
 </section>
 
